@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Centro Médico Familiar San Francisco</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#0b3d91;--blue2:#0a4aa8;--red:#d9222a;--ink:#14284b;--muted:#4a5a78;--bg:#fff;--soft:#eaf3fc;--card:#fff;--line:#e3eaf4;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+/* header */
+header{position:sticky;top:0;z-index:20;background:#fff;box-shadow:0 2px 12px rgba(11,61,145,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand img{height:62px;width:auto}
+.brand span{display:block;font-weight:600;color:var(--blue);font-size:15px;letter-spacing:.2px;line-height:1.1}
+.brand b{display:block;font-weight:700;font-size:25px;color:var(--blue);line-height:1.05}
+.menu{display:flex;gap:30px;font-size:14px;font-weight:500;color:var(--blue)}
+.menu a{padding:6px 0;border-bottom:2px solid transparent}
+.menu a:hover,.menu a.on{border-color:var(--red)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--blue2);color:#fff;font-weight:600;font-size:15px;padding:13px 22px;border-radius:10px;border:0;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--blue)}
+.btn.white{background:#fff;color:var(--blue2)}
+.btn.white:hover{background:#eef4fb}
+.btn.line{background:#fff;color:var(--blue2);border:1.5px solid var(--blue2);font-size:13.5px;padding:10px 18px}
+.btn svg{width:20px;height:20px;flex:none}
+.burger{display:none;background:none;border:0;padding:8px;color:var(--blue);cursor:pointer}
+/* hero */
+.hero{position:relative;background:#f4f8fd;overflow:hidden}
+.hero .wrap{position:relative;min-height:316px;display:flex;align-items:center}
+.hero-img{position:absolute;right:0;top:0;bottom:0;width:62%;background-size:cover;background-position:center;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 28%);mask-image:linear-gradient(90deg,transparent 0,#000 28%)}
+.hero-txt{position:relative;max-width:420px;padding:36px 0}
+.bar{display:block;width:38px;height:4px;background:var(--red);border-radius:2px;margin-bottom:14px}
+h1{font-size:clamp(34px,4.4vw,46px);line-height:1.08;margin:0 0 16px;color:var(--ink);font-weight:700;letter-spacing:-.5px}
+.hero-txt p{margin:0 0 22px;color:var(--muted);font-size:17px;line-height:1.45}
+.hero-txt p strong{color:var(--ink);font-weight:500}
+/* servicios */
+section{padding:0}
+.servicios{padding:34px 0 44px;text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--blue);font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase}
+.eyebrow i{display:block;width:32px;height:4px;background:var(--red);border-radius:2px}
+h2{font-size:clamp(28px,3.6vw,38px);margin:2px 0 8px;color:var(--blue);font-weight:700;letter-spacing:-.4px;line-height:1.15}
+.lead{margin:0 auto 28px;max-width:470px;color:var(--muted);font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:left}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 18px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 3px 14px rgba(11,61,145,.05);min-height:122px}
+.card svg{width:50px;height:50px;flex:none}
+.card h3{margin:2px 0 6px;font-size:16px;color:var(--blue);font-weight:600}
+.card p{margin:0;font-size:12.5px;line-height:1.5;color:var(--muted)}
+/* prevención */
+.prev{background:var(--soft);position:relative;overflow:hidden}
+.prev .wrap{display:grid;grid-template-columns:1fr 1.55fr;gap:0;align-items:center;padding:0}
+.prev-img{height:100%;min-height:232px;background-size:cover;background-position:center;-webkit-mask-image:linear-gradient(90deg,#000 70%,transparent);mask-image:linear-gradient(90deg,#000 70%,transparent)}
+.prev-txt{padding:30px 24px 26px 0}
+.prev-txt h2{font-size:clamp(28px,3.4vw,34px);max-width:320px;margin-top:10px}
+.prev-txt p{margin:0 0 18px;max-width:420px;color:var(--ink);font-size:15px}
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;font-size:12.5px;color:var(--blue);font-weight:500}
+.feat{display:flex;align-items:center;gap:10px;padding:0 12px;border-left:1px solid #c7d8ee}
+.feat:first-child{padding-left:0;border:0}
+.feat svg{width:34px;height:34px;flex:none}
+/* nosotros */
+.about{padding:30px 0 34px}
+.about .wrap{display:grid;grid-template-columns:1fr 1.05fr .9fr;gap:20px;align-items:stretch}
+.about h2{font-size:clamp(26px,3vw,31px);margin:10px 0 12px;max-width:300px}
+.about p{margin:0 0 18px;font-size:14px;color:var(--muted)}
+.photo{border-radius:10px;overflow:hidden;min-height:260px;background-size:cover;background-position:center;box-shadow:0 6px 20px rgba(11,61,145,.12)}
+.loc{background:#f1f7fd;border:1px solid var(--line);border-radius:12px;padding:16px}
+.loc .t{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+.loc small{display:block;font-size:12px;color:var(--muted)}
+.loc strong{display:block;font-size:17px;line-height:1.25;color:var(--ink)}
+.loc svg.pin{width:24px;height:30px;flex:none}
+.map{width:100%;height:auto;border-radius:8px;display:block}
+/* cta */
+.cta{background:linear-gradient(90deg,#0a3f99,#0b55b8);color:#fff}
+.cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:22px;padding-bottom:22px}
+.cta .l{display:flex;align-items:center;gap:20px}
+.cta .l svg{width:50px;height:50px;flex:none}
+.cta h2{color:#fff;margin:0;font-size:26px}
+.cta p{margin:0;font-size:14.5px;opacity:.92}
+/* footer */
+footer{background:linear-gradient(#0a3578,#08296b);color:#fff;padding:32px 0 36px;font-size:12.5px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:24px;align-items:start}
+.fbrand{display:flex;align-items:center;gap:14px}
+.fbrand img{height:76px;background:#fff;padding:2px}
+.fbrand span{display:block;font-weight:600;font-size:12.5px;line-height:1.1}
+.fbrand b{display:block;font-size:22px;line-height:1.05}
+.fbrand em{font-style:normal;opacity:.8;font-size:12px}
+footer h4{margin:0 0 8px;font-size:13px;font-weight:600}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:5px}
+footer li a{opacity:.88}footer li a:hover{opacity:1;text-decoration:underline}
+.fl{display:flex;gap:10px;align-items:flex-start;font-size:13.5px}
+.fl svg{width:22px;height:24px;flex:none}
+.fl+hr{border:0;border-top:1px solid rgba(255,255,255,.25);margin:14px 0}
+.slogan{position:relative;display:inline-block}
+.slogan::after{content:"";position:absolute;left:12px;right:-6px;bottom:-9px;height:2px;background:var(--red);border-radius:2px;transform:rotate(-1.5deg)}
+.copy{grid-column:1/-1;opacity:.6;font-size:11.5px;border-top:1px solid rgba(255,255,255,.15);padding-top:14px;margin-top:6px}
+/* responsive */
+@media(max-width:1000px){
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .prev .wrap{grid-template-columns:1fr}
+ .prev-img{min-height:220px;-webkit-mask-image:none;mask-image:none}
+ .prev-txt{padding:26px 24px}
+ .about .wrap{grid-template-columns:1fr 1fr}
+ .about .wrap>div:first-child{grid-column:1/-1}
+ footer .wrap{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+ .menu{display:none;position:absolute;left:0;right:0;top:76px;background:#fff;flex-direction:column;gap:0;padding:8px 24px 16px;box-shadow:0 10px 20px rgba(11,61,145,.1)}
+ .menu.open{display:flex}.menu a{padding:12px 0}
+ .burger{display:block;margin-left:auto}
+ .nav>.btn{display:none}
+ .brand img{height:50px}.brand b{font-size:19px}.brand span{font-size:12px}
+ .hero .wrap{flex-direction:column;align-items:stretch;padding:0}
+ .hero-img{position:relative;width:100%;height:230px;order:-1;-webkit-mask-image:none;mask-image:none}
+ .hero-txt{padding:24px;max-width:none}
+ .grid{grid-template-columns:1fr}
+ .feats{grid-template-columns:1fr 1fr;gap:14px}
+ .feat:nth-child(odd){border:0;padding-left:0}
+ .about .wrap{grid-template-columns:1fr}
+ .cta .wrap{flex-direction:column;align-items:flex-start}
+ footer .wrap{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#inicio" aria-label="Centro Médico Familiar San Francisco">
+   <img src="images/logo.png" alt="">
+   <div><span>CENTRO MÉDICO FAMILIAR</span><b>SAN FRANCISCO</b></div>
+  </a>
+  <nav class="menu" id="menu" aria-label="Principal">
+   <a class="on" href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#nosotros">Nosotros</a><a href="#ubicacion">Ubicación</a><a href="#contacto">Contacto</a>
+   <a href="https://wa.me/59177139878?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20el%20Centro%20M%C3%A9dico%20Familiar%20San%20Francisco." target="_blank" rel="noopener" style="font-weight:600">Agendar cita</a>
+  </nav>
+  <a class="btn" href="https://wa.me/59177139878?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20el%20Centro%20M%C3%A9dico%20Familiar%20San%20Francisco." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h2M12 14h2M16 14h.01M8 17h2M12 17h2"/></svg>Agendar cita</a>
+  <button class="burger" aria-label="Abrir menú" aria-expanded="false" id="burger"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+ <div class="hero-img" role="img" aria-label="Doctora sonriendo junto a una madre y su hija" style="background-image:url(images/hero.jpg)"></div>
+ <div class="wrap">
+  <div class="hero-txt">
+   <span class="bar"></span>
+   <h1>Centro Médico Familiar San Francisco</h1>
+   <p>Atención médica, prevención y <strong>orientación en salud para toda la familia.</strong></p>
+   <a class="btn" href="#servicios"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3.5" width="16" height="17" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Conoce nuestros servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;margin-left:8px"><path d="M9 5l7 7-7 7"/></svg></a>
+  </div>
+ </div>
+</section>
+
+<section class="servicios" id="servicios">
+ <div class="wrap">
+  <div class="eyebrow"><i></i>Nuestros servicios</div>
+  <h2>Tu salud en buenas manos</h2>
+  <p class="lead">Contamos con un equipo profesional y tecnología moderna para brindarte una atención integral y de calidad.</p>
+  <div class="grid">
+
+   <article class="card"><svg viewBox="0 0 56 56" fill="none"><circle cx="28" cy="15" r="9" fill="#0b3d91"/><path d="M10 52V40c0-8 8-13 18-13s18 5 18 13v12z" fill="#0b3d91"/><path d="M22 28l6 12 6-12" stroke="#fff" stroke-width="2.5" fill="none"/><circle cx="36" cy="44" r="3" stroke="#d9222a" stroke-width="2.5"/></svg><div><h3>Medicina general</h3><p>Diagnóstico, tratamiento y seguimiento de enfermedades comunes y crónicas.</p></div></article>
+
+   <article class="card"><svg viewBox="0 0 56 56" fill="none"><rect x="5" y="6" width="46" height="34" rx="4" stroke="#0b3d91" stroke-width="3.5"/><path d="M28 14c-9 0-14 8-12 14 3 6 14 6 18 2 5-4 3-16-6-16z" fill="#0b3d91" opacity=".9"/><path d="M28 40v7M18 50h20" stroke="#0b3d91" stroke-width="3.5" stroke-linecap="round"/><circle cx="31" cy="23" r="2.5" fill="#fff"/></svg><div><h3>Ecografía</h3><p>Estudios de imagen para un diagnóstico preciso.</p></div></article>
+
+   <article class="card"><svg viewBox="0 0 56 56" fill="none"><path d="M14 22c0-12 9-16 15-16s13 5 13 14" fill="#0b3d91"/><circle cx="28" cy="27" r="14" fill="#fff" stroke="#0b3d91" stroke-width="3"/><circle cx="23" cy="26" r="2" fill="#0b3d91"/><circle cx="33" cy="26" r="2" fill="#0b3d91"/><path d="M22 33c3 3 9 3 12 0" stroke="#d9222a" stroke-width="2.5" stroke-linecap="round"/><path d="M8 54c2-9 9-12 20-12s18 3 20 12z" fill="#0b3d91"/><path d="M24 43l4 5 4-5" stroke="#d9222a" stroke-width="2.5" fill="none"/></svg><div><h3>Pediatría</h3><p>Cuidado especializado para el crecimiento y desarrollo de tus hijos.</p></div></article>
+
+   <article class="card"><svg viewBox="0 0 56 56" fill="none"><path d="M28 14c-6 0-9 4-9 10 0 8 6 14 9 18 3-4 9-10 9-18 0-6-3-10-9-10z" fill="#d9222a"/><path d="M19 22C10 18 6 10 5 6c10 0 17 4 17 4M37 22c9-4 13-12 14-16-10 0-17 4-17 4" stroke="#0b3d91" stroke-width="3.5" stroke-linecap="round" fill="none"/><path d="M28 42v8M23 47h10" stroke="#0b3d91" stroke-width="3.5" stroke-linecap="round"/></svg><div><h3>Ginecología</h3><p>Salud integral de la mujer en todas sus etapas.</p></div></article>
+
+   <article class="card"><svg viewBox="0 0 56 56" fill="none"><path d="M24 4c-8 0-8 12-4 16 3 4 0 8-2 12-3 6 3 8 5 5-2 6-1 12 6 13 6 0 8-5 6-9-2-5-5-6-3-11 3-6 10-10 5-18-3-5-9-8-13-8z" fill="#0b3d91"/><circle cx="18" cy="24" r="4" fill="#fff"/><path d="M22 36c4 0 8 3 7 7" stroke="#d9222a" stroke-width="3" stroke-linecap="round"/></svg><div><h3>Traumatología</h3><p>Diagnóstico y tratamiento de lesiones del sistema óseo y muscular.</p></div></article>
+
+   <article class="card"><svg viewBox="0 0 56 56" fill="none"><path d="M28 50C8 36 4 25 4 18 4 11 9 6 16 6c5 0 9 3 12 7 3-4 7-7 12-7 7 0 12 5 12 12 0 7-4 18-24 32z" fill="#0b3d91"/><path d="M6 28h14l4-10 6 18 5-12 3 4h12" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><div><h3>Medicina interna</h3><p>Atención especializada en enfermedades crónicas y complejas.</p></div></article>
+
+   <article class="card"><svg viewBox="0 0 56 56" fill="none"><path d="M48 4c4 0 5 4 3 8L28 36l-8 3-3-3 3-8z" fill="#0b3d91"/><path d="M20 39c-4 8-10 11-16 11 6-2 8-8 10-13" stroke="#0b3d91" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M10 52c10 0 20-4 30-14" stroke="#d9222a" stroke-width="3" stroke-linecap="round" fill="none"/></svg><div><h3>Cirugía</h3><p>Procedimientos quirúrgicos con seguridad y profesionalismo.</p></div></article>
+
+   <article class="card"><svg viewBox="0 0 56 56" fill="none"><g transform="rotate(-40 28 28)"><rect x="17" y="2" width="22" height="46" rx="11" fill="#0b3d91"/><path d="M17 25h22v12c0 6-5 11-11 11s-11-5-11-11z" fill="#fff" stroke="#0b3d91" stroke-width="3"/></g><circle cx="42" cy="42" r="9" fill="#fff"/><path d="M42 36v12M36 42h12" stroke="#d9222a" stroke-width="3.5" stroke-linecap="round"/></svg><div><h3>Farmacia</h3><p>Medicamentos de calidad y orientación farmacéutica.</p></div></article>
+
+  </div>
+ </div>
+</section>
+
+<section class="prev">
+ <div class="wrap">
+  <div class="prev-img" role="img" aria-label="Manos sosteniendo un corazón con una familia" style="background-image:url(images/prevencion.jpg)"></div>
+  <div class="prev-txt">
+   <div class="eyebrow" style="font-size:11.5px"><i></i>Prevención y orientación en salud</div>
+   <h2>Porque la prevención también salva vidas</h2>
+   <p>Te acompañamos con programas de prevención, consejos de salud y orientación profesional para mejorar tu bienestar y el de tu familia.</p>
+   <div class="feats">
+    <div class="feat"><svg viewBox="0 0 36 36" fill="none"><path d="M18 3l13 5v9c0 8-6 13-13 16C11 30 5 25 5 17V8z" fill="#0b3d91"/><path d="M12 18l4 4 8-9" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Vacunación y control</div>
+    <div class="feat"><svg viewBox="0 0 36 36" fill="none"><path d="M18 11c-4-3-12-2-12 8 0 8 5 14 9 14 2 0 2-1 3-1s1 1 3 1c4 0 9-6 9-14 0-10-8-11-12-8z" fill="#0b3d91"/><path d="M18 11c0-4 2-7 6-8" stroke="#0b3d91" stroke-width="2.5" stroke-linecap="round"/></svg>Orientación en hábitos saludables</div>
+    <div class="feat"><svg viewBox="0 0 36 36" fill="none"><rect x="6" y="5" width="24" height="28" rx="3" fill="#0b3d91"/><rect x="12" y="2" width="12" height="6" rx="2" fill="#fff" stroke="#0b3d91" stroke-width="2"/><path d="M12 20l4 4 8-8" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>Seguimiento de enfermedades crónicas</div>
+    <div class="feat"><svg viewBox="0 0 36 36" fill="#0b3d91"><circle cx="18" cy="7" r="5"/><circle cx="7" cy="14" r="4"/><circle cx="29" cy="14" r="4"/><path d="M10 33v-8c0-5 4-8 8-8s8 3 8 8v8z"/><path d="M1 28v-6c0-3 3-5 6-5v11zM35 28v-6c0-3-3-5-6-5v11z"/></svg>Educación en salud familiar</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="about" id="nosotros">
+ <div class="wrap">
+  <div>
+   <div class="eyebrow" style="font-size:10.5px;letter-spacing:2px"><i style="width:28px;height:3px"></i>Sobre nosotros</div>
+   <h2>Centro Médico Familiar San Francisco</h2>
+   <p>Somos un centro médico comprometido con la salud y el bienestar de las familias de nuestra comunidad. Ofrecemos atención médica de calidad, con un equipo profesional y humano, enfocados en la prevención, el diagnóstico y el tratamiento oportuno.</p>
+   <a class="btn line" href="#nosotros">Conoce más sobre nosotros <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M9 5l7 7-7 7"/></svg></a>
+  </div>
+  <div class="photo" role="img" aria-label="Equipo del Centro Médico San Francisco frente a la clínica" style="background-image:url(images/equipo.jpg);background-position:48% 70%"></div>
+  <div class="loc" id="ubicacion">
+   <div class="t">
+    <svg class="pin" viewBox="0 0 24 30"><path d="M12 0C5.4 0 1 4.700 1 10.500 1 18 12 30 12 30s11-12 11-19.500C23 4.700 18.600 0 12 0z" fill="#d9222a"/><circle cx="12" cy="10.500" r="4" fill="#fff"/></svg>
+    <div><small>Nuestra ubicación</small><strong>Barrio 24 de junio, calle Cala 262</strong></div>
+   </div>
+   <svg class="map" viewBox="0 0 280 135" role="img" aria-label="Mapa: Barrio 24 de junio, calle Cala 262">
+    <rect width="280" height="135" fill="#eef1f4"/>
+    <path d="M190 135c10-25 35-40 90-52v52z" fill="#bfe0f5"/>
+    <path d="M205 135c10-22 32-36 75-46" stroke="#fff" stroke-width="5" fill="none"/>
+    <g stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"><path d="M-5 28L290 100"/><path d="M60-5L130 140"/><path d="M-5 95L170 135"/></g>
+    <g stroke="#d7dce2" stroke-width="1.200" fill="none"><path d="M-5 60L290 130"/><path d="M200-5L250 70"/></g>
+    <path d="M142 38c-9 0-14 6-14 13 0 9 14 25 14 25s14-16 14-25c0-7-5-13-14-13z" fill="#d9222a"/><circle cx="142" cy="51" r="5" fill="#fff"/>
+    <text x="164" y="52" font-size="11" fill="#2b3a55" font-family="Poppins,Arial,sans-serif">Barrio 24 de junio</text>
+    <text x="38" y="62" font-size="9.500" fill="#2b3a55" font-family="Poppins,Arial,sans-serif" transform="rotate(18 38 62)">Calle Cala</text>
+    <text x="226" y="100" font-size="9" fill="#2b3a55" font-family="Poppins,Arial,sans-serif" transform="rotate(-48 226 100)">Calle Cala 262</text>
+   </svg>
+  </div>
+ </div>
+</section>
+
+<section class="cta" id="cita">
+ <div class="wrap">
+  <div class="l">
+   <svg viewBox="0 0 50 50" fill="none" stroke="#fff" stroke-width="3"><rect x="4" y="7" width="42" height="39" rx="5"/><path d="M4 18h42M15 3v8M35 3v8" stroke-linecap="round"/><g fill="#fff" stroke="none"><rect x="11" y="24" width="6" height="5" rx="1"/><rect x="22" y="24" width="6" height="5" rx="1"/><rect x="33" y="24" width="6" height="5" rx="1"/><rect x="11" y="33" width="6" height="5" rx="1"/><rect x="22" y="33" width="6" height="5" rx="1"/><rect x="33" y="33" width="6" height="5" rx="1"/></g></svg>
+   <div><h2>Agenda tu cita</h2><p>Tu salud y la de tu familia es nuestra prioridad.</p></div>
+  </div>
+  <a class="btn white" href="https://wa.me/59177139878?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20el%20Centro%20M%C3%A9dico%20Familiar%20San%20Francisco." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.500" y="5" width="17" height="15" rx="2"/><path d="M3.500 10h17M8 3v4M16 3v4"/></svg>Agendar cita ahora <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M9 5l7 7-7 7"/></svg></a>
+ </div>
+</section>
+</main>
+
+<footer id="contacto">
+ <div class="wrap">
+  <div class="fbrand">
+   <img src="images/logo.png" alt="">
+   <div><span>CENTRO MÉDICO FAMILIAR</span><b>SAN FRANCISCO</b><em>Tu salud, nuestra prioridad</em></div>
+  </div>
+  <div><h4>Servicios</h4><ul>
+   <li><a href="#servicios">Medicina general</a></li><li><a href="#servicios">Ecografía</a></li><li><a href="#servicios">Pediatría</a></li><li><a href="#servicios">Ginecología</a></li><li><a href="#servicios">Traumatología</a></li><li><a href="#servicios">Medicina interna</a></li><li><a href="#servicios">Cirugía</a></li><li><a href="#servicios">Farmacia</a></li></ul></div>
+  <div><h4>Información</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#ubicacion">Ubicación</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
+  <div>
+   <div class="fl"><svg viewBox="0 0 24 30"><path d="M12 0C5.400 0 1 4.700 1 10.500 1 18 12 30 12 30s11-12 11-19.500C23 4.700 18.600 0 12 0z" fill="#fff"/><circle cx="12" cy="10.500" r="4" fill="#0a3578"/></svg><span>Barrio 24 de junio,<br>calle Cala 262</span></div>
+   <hr style="border:0;border-top:1px solid rgba(255,255,255,.25);margin:14px 0">
+   <div class="fl"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M3 21l1.6-5A8.500 8.500 0 1 1 8 19.400z"/><path d="M9 8.500c0 3.500 3 6.500 6.500 6.500l1-2-2-1-1 1c-1-.5-2-1.500-2.500-2.500l1-1-1-2z" fill="#fff" stroke="none"/></svg><a href="https://wa.me/59177139878?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20el%20Centro%20M%C3%A9dico%20Familiar%20San%20Francisco." target="_blank" rel="noopener">WhatsApp: +591 77139878</a></div>
+   <hr style="border:0;border-top:1px solid rgba(255,255,255,.25);margin:14px 0">
+   <div class="fl"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M12 21C4 15 2 11 2 8c0-3 2-5 5-5 2 0 4 1 5 3 1-2 3-3 5-3 3 0 5 2 5 5 0 3-2 7-10 13z"/></svg><span class="slogan">Salud para hoy<br>y un mejor mañana</span></div>
+  </div>
+  <div class="copy">© 2026 Centro Médico Familiar San Francisco. Todos los derechos reservados.</div>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var b=document.getElementById('burger'),m=document.getElementById('menu');
+ b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+ m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+})();
+</script>
+</body>
+</html>
